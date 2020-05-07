@@ -102,8 +102,8 @@ public class ProgrammeListAdapter  extends ArrayAdapter<Programme> {
 
 
         holder.maladieView.setText(programme.getMaladie());
-        holder.date_debutView.setText("Date Début "+programme.getDate_debut());
-        holder.dureeView.setText("Durée Maladie "+programme.getDuree() + " jours");
+        holder.date_debutView.setText(programme.getDate_debut());
+        holder.dureeView.setText(programme.getDuree() + " jours");
 
 
         dtf = DateTimeFormatter.ofPattern("dd");

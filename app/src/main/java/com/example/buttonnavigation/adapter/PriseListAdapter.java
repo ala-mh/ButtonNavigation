@@ -29,6 +29,7 @@ public class PriseListAdapter  extends ArrayAdapter<Prise> {
 
     private static class ViewItem {
         TextView medicamentView;
+        TextView dateView;
         TextView heureView;
         TextView qtView;
     }
@@ -68,6 +69,7 @@ public class PriseListAdapter  extends ArrayAdapter<Prise> {
 
              holder= new ViewItem();
              holder.medicamentView = (TextView) convertView.findViewById(R.id.medicamentView);
+             holder.dateView = (TextView) convertView.findViewById(R.id.DatePriseView);
              holder.heureView = (TextView) convertView.findViewById(R.id.heureView);
              holder.qtView = (TextView) convertView.findViewById(R.id.qtView);
 
@@ -88,8 +90,9 @@ public class PriseListAdapter  extends ArrayAdapter<Prise> {
 
 
           holder.medicamentView.setText(prise.getMedicament());
-          holder.heureView.setText("Heure "+prise.getHeure()+"h");
-          holder.qtView.setText("quantité "+prise.getQt());
+          holder.dateView.setText(prise.getDate_prise());
+          holder.heureView.setText(prise.getHeure()+"h");
+          holder.qtView.setText(prise.getQt());
 
         ImageView imageView = (ImageView) result.findViewById(R.id.item_info1);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
