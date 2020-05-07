@@ -37,11 +37,16 @@ public class priseDAO {
             LocalDateTime now = LocalDateTime.now();
             //System.out.println(dtf.format(now));
 
-            c = db.rawQuery("Select * FROM prog_prise_med where num_p=? AND date=? order by heure", new String[] {num_p , dtf.format(now)});
+            //c = db.rawQuery("Select * FROM prog_prise_med where num_p=? AND date=? order by heure", new String[] {num_p , dtf.format(now)});
+            c = db.rawQuery("Select * FROM prog_prise_med",null);
+
             if (c == null) return null;
             c.moveToFirst();
             do {
-                Prise prise = new Prise(c.getString(c.getColumnIndex("ref_med")), c.getString(c.getColumnIndex("heure")), c.getString(c.getColumnIndex("qte")));
+                Prise prise = new Prise(c.getInt(c.getColumnIndex("num_p")),c.getInt(c.getColumnIndex("num_prise")),
+                        c.getString(c.getColumnIndex("ref_med")), c.getString(c.getColumnIndex("date")),
+                        c.getString(c.getColumnIndex("heure")), c.getString(c.getColumnIndex("qte")));
+
                 temp.add(prise);
             } while (c.moveToNext());
             c.close();

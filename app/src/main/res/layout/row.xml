@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/MaladieView"
         android:layout_width="0dp"
-        android:layout_weight ="1.2"
+        android:layout_weight ="0.8"
         android:layout_height="70dp"
         android:textColor="#673AB7"
         android:textSize="20sp"
@@ -17,7 +17,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
-        android:layout_weight ="1.5"
+        android:layout_weight ="1"
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal">
         <TextView
@@ -39,12 +39,16 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/item_info"
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:progressBarStyleHorizontal"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_weight="0.3"
-        android:src="@android:drawable/ic_dialog_info"/>
+        android:layout_weight="0.4"
+        android:indeterminate="false"
+        android:max="100"
+        android:secondaryProgress="100"
+        android:progressDrawable="@drawable/progress_circle"/>
 
 </LinearLayout>
