@@ -100,8 +100,8 @@ public class PriseListAdapter  extends ArrayAdapter<Prise> {
 
         String dd=prise.getDate_prise()+ " "+ prise.getHeure();
 
-        System.out.println(dtf.format(now));
-        System.out.println(prise.getHeure());
+        //System.out.println(dtf.format(now));
+        //System.out.println(prise.getHeure());
 
         if (dd.compareTo(dtf.format(now)) == 1)
             imageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.MULTIPLY);

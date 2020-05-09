@@ -1,7 +1,7 @@
 package com.example.buttonnavigation.model;
 
 public class Programme {
-    private int num_p;
+    private String num_p;
     private String Maladie;
     private String Date_debut;
     private String Duree;
@@ -12,16 +12,16 @@ public class Programme {
         Duree = duree;
     }
 
-    public Programme(int num_p,String maladie,String date_debut,String duree) {
+    public Programme(String num_p,String maladie,String date_debut,String duree) {
         this.num_p = num_p;
         Maladie = maladie;
         Date_debut = date_debut;
         Duree = duree;
     }
 
-    public int getNum_p() { return num_p; }
+    public String getNum_p() { return num_p; }
 
-    public void setNum_p(int num_p) { this.num_p = num_p; }
+    public void setNum_p(String num_p) { this.num_p = num_p; }
 
     public String getMaladie() {
         return Maladie;

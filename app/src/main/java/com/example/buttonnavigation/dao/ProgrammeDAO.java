@@ -22,7 +22,6 @@ public class ProgrammeDAO {
     }
 
     public List<Programme> getAllProg () {
-
         List<Programme> temp = new ArrayList<Programme>();
         Cursor c;
         try {
@@ -30,13 +29,23 @@ public class ProgrammeDAO {
             if (c == null) return null;
             c.moveToFirst();
             do {
-                Programme programme = new Programme(c.getInt(c.getColumnIndex("num_p")),c.getString(c.getColumnIndex("maladie")), c.getString(c.getColumnIndex("date_debut")), c.getString(c.getColumnIndex("duree")));
+                Programme programme = new Programme(c.getString(c.getColumnIndex("num_p")),c.getString(c.getColumnIndex("maladie")), c.getString(c.getColumnIndex("date_debut")), c.getString(c.getColumnIndex("duree")));
                 temp.add(programme);
             } while (c.moveToNext());
             c.close();
+            db.close();
         } catch (Exception e) {
         }
         return temp;
+    }
+
+    public void addProg(Programme p) {
+
+        try {
+            db.execSQL("insert into programme values(?,?,?,?)",new String[]{p.getNum_p(),p.getDate_debut(),p.getDuree(),p.getMaladie()});
+        }
+        catch (Exception e) {
+        }
     }
 
 
